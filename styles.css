@@ -1,0 +1,382 @@
+:root{
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh; /* #even there is no content height of the webpage will be equal to viewport */
+    max-width: 1280px; /* #1280px will be width of the webpage irrespective of the screen size or devices width */
+    background-color: white;
+    margin: 0 auto; /* #this will make sure that all the content in webpage which will be constrained to width of 1280px is cetered within our viewport */
+}
+
+body{
+    margin: 0px !important; /* #resets the default margin that the body element has */
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.page-container{
+    margin-bottom: 70px;
+}
+
+.nav{
+
+}
+
+nav{
+    background-color: black;
+    display: flex; /* #To convert this nav element into flexbox */
+    flex-direction: row;
+    justify-content: space-between; /* #To specify th horizontal alignment */
+}
+
+/* #Style the logo CSS class inside the nav element  */
+
+nav .logo{
+    display: flex; 
+    align-items: center; /* #Used for vertical alignment. Image and text will centered vertically */
+}
+
+/* #Styles for the img tag which is inside the div with class logo on it  */
+
+nav .logo img{
+    width: 56px;
+    height: 56px;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+/* #Styles for title inside the div  */
+
+nav .logo .title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 20px;  
+}
+
+nav ul{
+    display: flex;   
+    flex-direction: row;   /* #Set horizontally */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+nav ul li{
+    color: white;
+    padding: 22px 40px; /* Padding: vert horz */
+    background-color: #333333;
+}
+
+/* #To change the color when mouse is hovered over it  */
+
+nav ul li:hover{
+    background-color: black;
+}
+
+/* #Targeting active element in list  */
+
+nav ul li.active{
+    background-color: black;
+}
+
+/* #targeting anchor tag elements which are inside our list  */
+
+nav ul li a{
+    color: white;
+    text-decoration: none; /* #Now it wont look like a link it just looks like a text element */
+}
+
+
+/* #BANNER */
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    background-image: url(https://fastly.picsum.photos/id/1005/900/450.jpg?blur=5&hmac=nPvxT1clDL276pc_JkoT47iUSsMwy_sjF9XOsIgz1wU);
+    background-size: cover; /* #By using this the img covers the entire space which we have assigned */
+    background-color: #333333;  /* #we set this background-color just in case if image doesnt loads */
+    text-align: center;
+}
+ 
+/* #set the animation to the text on banner  */
+@keyframes appear {
+    from{
+        opacity: 0.0;  /* #To work this animation the position property should be set to relative where ever we wanted to use this animation */
+        top: -100px;
+    }
+    to{
+        opacity: 1.0;
+        top: 0.0;
+    }
+}
+
+.banner .heading{
+    flex: 1;
+    justify-self: center;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    position: relative;
+    animation: appear 1s ease-in-out 0s forwards;
+}
+
+.banner .heading small{
+    font-size: 24px;
+}
+
+
+/* #FOR TEXT ON WEBPAGE  */
+.maintext{
+    font-size: 18px;
+    padding: 12px;
+}
+
+/* #FOR CARDS */
+.subtext{
+    display: flex;
+}
+
+/* #FOR APPLYING COMMON STYLES TO ALL THE CARDS i.e., TO THE div ELEMENTS WHICH ARE INSIDE THE SUBTEXT  */
+.subtext div{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* #STYLES DEFINING TO CLASSES INDIVIDUALLY FOR CARDS */
+.subtext .red{
+    background-color: red;
+}
+.subtext .yellow{
+    background-color: yellow;
+}
+.subtext .green{
+    background-color: green;
+}
+
+.quote{
+    display: block;
+    background-color: lightgray;
+    padding: 50px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* #WE WANT TO ADD SOME QUOTES TO THE BLOCKQUOTE  */
+.quote::before{
+    display: inline-block;
+    content: open-quote;
+    color: gray;
+    font-size: 32px;
+}
+.quote::after{
+    display: inline-block;
+    content: close-quote;
+    color: gray;
+    font-size: 32px;
+}
+
+/* #STYLES FOR PROJECTS */
+h3{
+    font-size: 24px;
+    padding: 12px;
+    margin: 6px;
+    border-top: 5px solid lightgray;
+    border-bottom: 5px solid lightgray;
+}
+
+.projects{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.project{
+    flex-basis: 325px; /* #flex-basis and width are 2 similar properties but its better to prefer flex-basis */
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+}
+
+.project h4{
+    font-size: 20px;
+    padding: 12px;
+    margin: 6px;
+    border-top: 5px solid lightgray;
+    border-bottom: 5px solid lightgray;
+}
+
+.project p{
+    padding: 0px 12px;
+}
+
+.project img{
+    width: 100%;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid blue;
+}
+
+.project img:hover{
+    transform: scale(0.95);
+    opacity: 0.5;
+}
+/* #STYLES FOR BUTTON  */
+.project button{
+    background-color: lightgreen;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 12px;
+}
+/* #BUTTON HOVER EFFECT  */
+.project button:hover{
+    background-color: green;
+}
+
+/* #GALLERY */
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 8px;
+    padding: 12px;
+}
+
+.gallery-item{
+    width: 100%;
+    height: 100%;
+    transition: all 0.25s ease-in-out;
+}
+
+.gallery-item:hover{
+    transform: scale(0.95);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid blue;
+    border-radius: 10px;
+    object-fit: cover; /* #This makes sure that img occupies the grid */
+}
+/* #HERE WE PLACE THE IMG ACCORDING TO THE GRID WHERE WE WANTED TO PLACE  */
+.gallery-item-1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.gallery-item-2{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.gallery-item-3{
+    grid-column: 3/5;
+    grid-row: 1/3;
+}
+.gallery-item-4{
+    grid-column: 1/3;
+    grid-row: 2/4;
+}
+.gallery-item-5{
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+.gallery-item-6{
+    grid-column: 4/5;
+    grid-row: 3/4;
+}
+
+/* CONTACT */
+.container {
+    display: flex;   /* #Both map and content will be placed side by side */
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 10px 0px; /* #vert and horz */
+}
+
+.container form{
+    flex: 1;
+}
+
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    height: 50px;
+}
+
+input[type=submit] {
+    background-color: lightgreen;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover {
+    background-color: green;
+}
+
+.container .map{
+    padding: 12px;
+    margin-left: 20px;
+    flex: 1;
+}
+/* #FOOTER */
+.footer {
+    position: fixed; /* #It is used to set the content in fixed position */ 
+    left: 0;  /* #By making these 0 i.e., it occupies the entire space */
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 24px;
+}
+
+/* #To make this header menu responsive(media queiries)  */
+/* #It's always better to place these css at the end  */
+/* #Tablets */
+@media all and (max-width:800px) {
+    nav{
+        justify-content: flex-start;
+    }
+    nav ul{
+        justify-content: space-between;
+    }
+}
+
+/* #Phones */
+@media all and (max-width:600px) {
+    nav{
+        flex-direction: column; /* #Used for aligning vertically */
+        align-items: center; /* #Used to set title and list items to the center */
+    }
+    nav ul{
+        width: 100%;
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+    nav ul li{
+        text-align: center;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+    .container .map{
+        margin-left: 0px;
+    }
+}
